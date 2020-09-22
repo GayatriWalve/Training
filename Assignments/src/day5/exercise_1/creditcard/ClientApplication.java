@@ -6,7 +6,7 @@ public class ClientApplication {
 
 	public static void main(String[] args) {
 		
-		CreditCardDetails[] cardDetails = new CreditCardDetails[10];
+		CreditCardDetails[] cardDetails = new CreditCardDetails[2];
 		Scanner sc = new Scanner(System.in);
 		
 		String format = null;

@@ -44,6 +44,42 @@ public class CreditCardDetails implements Serializable {
 	}
 	
 	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cardHolderName == null) ? 0 : cardHolderName.hashCode());
+		result = prime * result + (int) (cardNumber ^ (cardNumber >>> 32));
+		long temp;
+		temp = Double.doubleToLongBits(creditCardLimit);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + (int) (expiryDate ^ (expiryDate >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CreditCardDetails other = (CreditCardDetails) obj;
+		if (cardHolderName == null) {
+			if (other.cardHolderName != null)
+				return false;
+		} else if (!cardHolderName.equals(other.cardHolderName))
+			return false;
+		if (cardNumber != other.cardNumber)
+			return false;
+		if (Double.doubleToLongBits(creditCardLimit) != Double.doubleToLongBits(other.creditCardLimit))
+			return false;
+		if (expiryDate != other.expiryDate)
+			return false;
+		return true;
+	}
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

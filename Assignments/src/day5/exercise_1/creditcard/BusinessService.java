@@ -124,7 +124,7 @@ public class BusinessService {
 	public CreditCardDetails[] retrieveCardDetails(CreditCardDetails[] cardDetails)
 	{
 		ObjectInputStream inputStream = null ;		
-		CreditCardDetails[] newCard = new CreditCardDetails[5] ;		
+		CreditCardDetails[] newCard = new CreditCardDetails[1] ;		
 		
 		try {
 		inputStream = new ObjectInputStream(new FileInputStream(new File("book.ser")));
@@ -166,7 +166,7 @@ public class BusinessService {
 	public CreditCardDetails[] retrieveCardDetails(CreditCardDetails[] cardDetails,String file)
 	{
 		BufferedReader br = null ;		
-		CreditCardDetails[] newCard = new CreditCardDetails[5] ;	
+		CreditCardDetails[] newCard = new CreditCardDetails[1] ;	
 		int k=0;
 		String line = null;
 		try {
