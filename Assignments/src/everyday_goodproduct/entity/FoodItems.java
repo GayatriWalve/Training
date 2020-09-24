@@ -183,11 +183,11 @@ public class FoodItems implements Comparable<FoodItems> {
 	}
 
 
-
+//here we are comparing the quantity so that the Collections.sort(); will sort the list by quantity attribute
 	@Override
 	public int compareTo(FoodItems o) {
-		if(this.itemCode>o.itemCode)return 1;
-		if(this.itemCode<o.itemCode) return -1;
+		if(this.itemQuantity<o.itemQuantity)return 1;
+		if(this.itemQuantity>o.itemQuantity) return -1;
 		return 0;
 	}
 	

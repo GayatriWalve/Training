@@ -28,40 +28,36 @@ public class Application {
 		Electronics mobile = new Electronics(1045, "Mobile", 25000.00, 18, 200);
 		Electronics wifi = new Electronics(1213, "Wi-Fi Dongal", 4000.00, 24, 50);
 		
-		List<FoodItems> foodList= new ArrayList<FoodItems>();
-		List<Apparel> apparaleList = new ArrayList<Apparel>();
-		List<Electronics> electronicsList=new ArrayList<Electronics>();
-//created list arrays
-		//and adding objects in the list
-		foodList.add(milk);
-		foodList.add(curd);
-		foodList.add(cake);
-		
-		apparaleList.add(tshirt);
-		apparaleList.add(jeans);
-		apparaleList .add(sweater);
-		
-		electronicsList.add(tv);
-		electronicsList.add(wifi);
-		electronicsList.add(mobile);
-		
 		ProductServicesDAOImplementation psDAO =new ProductServicesDAOImplementation();
+		// created the object of class where all methods have been overriden
+		
+		psDAO.addFoodItems(milk);
+		psDAO.addFoodItems(curd);//just adding fooditems in the list
+		psDAO.addFoodItems(cake);
+		
+		psDAO.addApparels(tshirt);
+		psDAO.addApparels(jeans);
+		psDAO.addApparels(sweater);
+		
+		psDAO.addElectronics(mobile);
+		psDAO.addElectronics(wifi);
+		psDAO.addElectronics(tv);
 		
 		System.out.println("\n 1.FoodItems\n 2.Apparels\n 3.Electronics");
-		System.out.println("Enter the choice among above 3:");
+		System.out.println("Enter the choice among above 3:");//asking for user choice
 		int choice=0;
 		Scanner sc = new Scanner(System.in);
 		choice = sc.nextInt();
-		System.out.println(choice);
-		//psDAO.getCategory(choice);
 		switch (choice) {
 		case 1:
 			psDAO.showAllFoodItems();
 			break;
 		case 2:
 			psDAO.showAllApparel();
+			break;
 		case 3:
 			psDAO.showAllElectronics();
+			break;
 		default:
 			break;
 		}

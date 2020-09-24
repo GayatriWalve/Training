@@ -1,3 +1,6 @@
+//Author :Gayatri Walve
+//implementation of the ProductServiceDAO interface methods..
+
 package everyday_goodproduct.servicedaosimplementation;
 
 import java.util.ArrayList;
@@ -84,6 +87,7 @@ public class ProductServicesDAOImplementation implements ProductServices {
 	public void showAllFoodItems() {
 		
 		System.out.println("FoodList items:");
+		Collections.sort(this.foodList);
 		for(FoodItems item:this.foodList)
 		{
 			System.out.println(item);
@@ -93,6 +97,7 @@ public class ProductServicesDAOImplementation implements ProductServices {
 	
 	public void showAllApparel() {
 		
+		Collections.sort(this.apparaleList);
 		for(Apparel entity:this.apparaleList)
 		{
 			System.out.println(entity);
@@ -101,6 +106,8 @@ public class ProductServicesDAOImplementation implements ProductServices {
 	}
 
 	public void showAllElectronics() {
+		
+		Collections.sort(this.electronicsList);
 		for(Electronics entity:this.electronicsList)
 		{
 			System.out.println(entity);
